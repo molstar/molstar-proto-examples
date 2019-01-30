@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+        <title>Mol* Examples - Simple Viewer</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html, body {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="app"></div>
+        <script type="text/javascript" src="index.js"></script>
+        <script type="text/javascript">
+            const simpleViewer = new App.SimpleViewer('app')
+            simpleViewer.loadPdbId('3pqr')
+        </script>
+    </body>
+</html>

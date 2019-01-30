@@ -1,0 +1,63 @@
+{
+  "name": "molstar-proto-examples",
+  "version": "0.1.0",
+  "description": "Mol* Examples.",
+  "homepage": "https://github.com/mol-star/molstar-proto-examples#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mol-star/molstar-proto-examples.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mol-star/molstar-proto-examples/issues"
+  },
+  "scripts": {
+    "lint": "tslint src/**/*.ts",
+    "build": "cpx \"src/**/*.{scss,woff,woff2,ttf,otf,eot,svg,html}\" build/src/ && tsc -b",
+    "build-webpack": "webpack --mode development",
+    "watch": "concurrently --kill-others \"npm:watch-ts\" \"npm:watch-extra\" \"npm:watch-webpack\"",
+    "watch-ts": "tsc -watch",
+    "watch-extra": "cpx \"src/**/*.{scss,woff,woff2,ttf,otf,eot,svg,html}\" build/src/ --watch",
+    "watch-webpack": "webpack -w --mode development"
+  },
+  "glslify": {
+    "transform": [
+      "glslify-import"
+    ]
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/argparse": "^1.0.35",
+    "@types/benchmark": "^1.0.31",
+    "@types/compression": "0.0.36",
+    "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.12",
+    "@types/node": "^10.12.18",
+    "@types/node-fetch": "^2.1.4",
+    "@types/react": "^16.7.20",
+    "@types/react-dom": "^16.0.11",
+    "@types/webgl2": "0.0.4",
+    "concurrently": "^4.1.0",
+    "cpx": "^1.5.0",
+    "css-loader": "^2.1.0",
+    "extra-watch-webpack-plugin": "^1.0.3",
+    "file-loader": "^3.0.1",
+    "glslify": "^7.0.0",
+    "glslify-import": "^3.1.0",
+    "glslify-loader": "^2.0.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "node-sass": "^4.11.0",
+    "raw-loader": "^1.0.0",
+    "resolve-url-loader": "^3.0.0",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4",
+    "uglify-js": "^3.4.9",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.2.1"
+  },
+  "dependencies": {
+    "mol-star-proto": "git+https://github.com/molstar/molstar-proto.git#b44313099c532efee9b395759468ea4e7db20a12"
+  }
+}
